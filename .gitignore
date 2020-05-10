@@ -10,6 +10,7 @@
 .idea/
 /vendor/
 /public/uploads/*
+package-lock.json
 ###< symfony/framework-bundle ###
 
 ###> symfony/web-server-bundle ###
