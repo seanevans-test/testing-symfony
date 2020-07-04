@@ -26,7 +26,13 @@
                         <a href="{{ path('post.show', {id: post.id}) }}">{{ post.title }}</a>
                     </td>
                     <td>
-                        <a class="text-danger" href="{{ path('post.delete', {id: post.id}) }}">Delete</a>
+                        {% if is_granted('IS_AUTHENTICATED_FULL') %}
+                        <a class="text-danger" href="{{ path('post.delete', {id: post.id}) }}">
+                        {% endif %}
+                        Delete
+                        {% if is_granted('IS_AUTHENTICATED_FULL') %}
+                        </a>
+                        {% endif %}
                     </td>
                 </tr>
             {% endfor %}
