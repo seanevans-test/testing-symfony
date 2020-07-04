@@ -13,13 +13,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("/post", name="post.")
- */
+
 class PostController extends AbstractController
 {
     /**
-     * @Route("/", name="index")
+     * @Route("/", name="post.index")
      * @param PostRepository $postRepository
      * @return Response
      */
@@ -32,7 +30,7 @@ class PostController extends AbstractController
     }
 
     /**
-     * @Route("/create", name="create")
+     * @Route("/post/create", name="post.create")
      * @param Request $request
      * @return string
      */
@@ -65,7 +63,7 @@ class PostController extends AbstractController
     }
 
     /**
-     * @Route("/show/{id}", name="show")
+     * @Route("post/show/{id}", name="post.show")
      * @param Post $post
      * @return Response
      */
