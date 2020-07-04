@@ -76,7 +76,7 @@ class PostController extends AbstractController
     }
 
     /**
-     * @Route("/delete/{id}", name="delete")
+     * @Route("/post/delete/{id}", name="post.delete")
      * @param Post $post
      * @return Response
      */
