@@ -1,5 +1,6 @@
 package java;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class HomePage {
@@ -8,6 +9,15 @@ public class HomePage {
 
     public HomePage(WebDriver driver){
         this.driver = driver;
+    }
+
+    public LoginPage clickLogin(){
+        clickLink("login");
+        return new LoginPage(driver);
+    }
+
+    private void clickLink(String linkText){
+        driver.findElement(By.linkText(linkText)).click();
     }
 
 }
