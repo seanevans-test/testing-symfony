@@ -16,6 +16,11 @@ public class HomePage {
         return new LoginPage(driver);
     }
 
+    public PostsPage clickDropdown(){
+        clickLink("Posts");
+        return new PostsPage(driver);
+    }
+
     private void clickLink(String linkText){
         driver.findElement(By.linkText(linkText)).click();
     }
