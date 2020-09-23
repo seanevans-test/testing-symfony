@@ -35,7 +35,6 @@ class PostController extends AbstractController
      * @return string
      */
     public function create(Request $request, FileUploader $fileUploader, Notification $notification) {
-        // create new post with title
         $post = new Post();
 
         $form = $this->createForm(PostType::class, $post);
@@ -56,7 +55,6 @@ class PostController extends AbstractController
             return $this->redirect($this->generateUrl('post.index'));
         }
 
-        // return a response
         return $this->render('post/create.html.twig', [
             'form' => $form->createView()
         ]);
@@ -68,7 +66,6 @@ class PostController extends AbstractController
      * @return Response
      */
     public function show(Post $post) {
-        // create the show post view
         return $this->render('post/show.html.twig', [
             'post' => $post
         ]);
